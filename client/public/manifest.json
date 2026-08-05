@@ -1,0 +1,32 @@
+{
+  "name": "رونق للديكور - ديكورات احترافية في الرياض",
+  "short_name": "رونق للديكور",
+  "description": "شركة متخصصة في الدهانات والديكورات الداخلية والخارجية والتشطيبات والترميم في الرياض",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/manus-storage/ronaq-logo_759e255b.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/manus-storage/ronaq-logo_759e255b.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "services"],
+  "screenshots": [
+    {
+      "src": "/manus-storage/hero-banner_c005b48c.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ]
+}

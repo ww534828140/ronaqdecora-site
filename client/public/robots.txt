@@ -1,0 +1,20 @@
+# رونق للديكور - Robots.txt
+# يسمح لجميع محركات البحث بالزحف والأرشفة
+
+User-agent: *
+Allow: /
+Disallow: 
+
+# السماح لجوجل بالزحف
+User-agent: Googlebot
+Allow: /
+
+# السماح لـ Bing بالزحف
+User-agent: Bingbot
+Allow: /
+
+# ملف Sitemap
+Sitemap: https://ronaqdecora-kndbnpgt.manus.space/sitemap.xml
+
+# وقت الزحف المفضل
+Crawl-delay: 1
