@@ -4,6 +4,7 @@ import ServicesSection from '@/components/ServicesSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import AboutSection from '@/components/AboutSection';
 import ServicesKeywordsSection from '@/components/ServicesKeywordsSection';
+import RiyadhDistrictsSection from '@/components/RiyadhDistrictsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <ServicesSection />
         <ServicesKeywordsSection />
+        <RiyadhDistrictsSection />
         <ProjectsSection />
         <AboutSection />
         <ContactSection />
