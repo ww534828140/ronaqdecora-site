@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import MobileCallRedirect from "./components/MobileCallRedirect";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
@@ -32,6 +33,7 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          <MobileCallRedirect />
           <Router />
         </TooltipProvider>
       </ThemeProvider>
