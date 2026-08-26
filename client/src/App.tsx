@@ -6,12 +6,14 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import MobileCallRedirect from "./components/MobileCallRedirect";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
+import ReviewsAdmin from "./pages/ReviewsAdmin";
 
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/reviews-admin"} component={ReviewsAdmin} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
