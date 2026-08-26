@@ -35,20 +35,24 @@ function Stars({ value, size = 18 }: { value: number; size?: number }) {
 
 export default function ReviewsSection() {
   const { data, isLoading } = trpc.reviews.list.useQuery();
+  const utils = trpc.useUtils();
   const [authorName, setAuthorName] = useState('');
   const [city, setCity] = useState('الرياض');
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [submittedMessage, setSubmittedMessage] = useState<string | null>(null);
   const [visitorKey] = useState(getVisitorKey);
 
   const submitReview = trpc.reviews.submit.useMutation({
     onSuccess: result => {
-      setSubmitted(true);
+      setSubmittedMessage(result.message);
       setAuthorName('');
       setCity('الرياض');
       setRating(0);
       setComment('');
+      if (result.autoApproved) {
+        void utils.reviews.list.invalidate();
+      }
       toast.success(result.message);
     },
     onError: error => toast.error(error.message),
@@ -83,7 +87,7 @@ export default function ReviewsSection() {
             قيّم تجربتك مع رونق
           </h2>
           <p className="max-w-2xl text-base leading-8 text-white/65 md:text-lg">
-            اختر عدد النجوم واكتب تجربتك. تُحفظ مشاركتك مباشرة وتظهر بعد مراجعتها حفاظاً على موثوقية الآراء.
+            اختر عدد النجوم واكتب تجربتك. تُنشر تقييمات الخمس نجوم تلقائياً، أما التقييمات الأخرى فتظهر بعد مراجعتها.
           </p>
         </div>
 
@@ -165,10 +169,10 @@ export default function ReviewsSection() {
               إرسال التقييم
             </button>
 
-            {submitted && (
+            {submittedMessage && (
               <div className="mt-5 flex items-center gap-2 rounded-xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-800">
                 <CheckCircle2 size={20} />
-                تم استلام تقييمك وسيظهر بعد مراجعته.
+                {submittedMessage}
               </div>
             )}
           </form>
@@ -208,7 +212,7 @@ export default function ReviewsSection() {
               <div className="rounded-3xl border border-dashed border-white/20 bg-white/[0.04] p-10 text-center">
                 <Star className="mx-auto mb-4 text-accent" size={34} />
                 <h3 className="mb-2 text-xl font-bold">شارك تجربتك الأولى</h3>
-                <p className="leading-7 text-white/55">لا توجد تقييمات منشورة حتى الآن. التقييمات الجديدة تظهر بعد التحقق منها.</p>
+                <p className="leading-7 text-white/55">لا توجد تقييمات منشورة حتى الآن. تقييمات الخمس نجوم تظهر تلقائياً، وما عداها بعد التحقق.</p>
               </div>
             )}
           </div>

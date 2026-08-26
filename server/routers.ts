@@ -41,6 +41,7 @@ export const appRouter = router({
         })
       )
       .mutation(async ({ ctx, input }) => {
+        const autoApproved = input.rating === 5;
         const forwarded = ctx.req.headers["x-forwarded-for"];
         const ip = Array.isArray(forwarded)
           ? forwarded[0]
@@ -56,7 +57,7 @@ export const appRouter = router({
             city: input.city.trim(),
             rating: input.rating,
             comment: input.comment.trim(),
-            status: "pending",
+            status: autoApproved ? "approved" : "pending",
             submissionKey,
           });
         } catch (error) {
@@ -75,7 +76,10 @@ export const appRouter = router({
 
         return {
           success: true,
-          message: "شكراً لتقييمك. سيظهر بعد مراجعته.",
+          autoApproved,
+          message: autoApproved
+            ? "شكراً لتقييمك بخمس نجوم. تم نشره الآن."
+            : "شكراً لتقييمك. سيظهر بعد مراجعته.",
         };
       }),
     pending: adminProcedure.query(() => db.listPendingCustomerReviews()),

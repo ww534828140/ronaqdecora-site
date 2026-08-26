@@ -56,7 +56,7 @@ describe('reviews router', () => {
     expect(result.items).toHaveLength(2);
   });
 
-  it('stores a valid review as pending', async () => {
+  it('automatically approves a five-star review', async () => {
     dbMocks.createCustomerReview.mockResolvedValue(undefined);
 
     const result = await appRouter.createCaller(createContext()).reviews.submit({
@@ -68,8 +68,26 @@ describe('reviews router', () => {
     });
 
     expect(result.success).toBe(true);
+    expect(result.autoApproved).toBe(true);
     expect(dbMocks.createCustomerReview).toHaveBeenCalledWith(
-      expect.objectContaining({ status: 'pending', rating: 5 })
+      expect.objectContaining({ status: 'approved', rating: 5 })
+    );
+  });
+
+  it('keeps a review below five stars pending for manual review', async () => {
+    dbMocks.createCustomerReview.mockResolvedValue(undefined);
+
+    const result = await appRouter.createCaller(createContext()).reviews.submit({
+      authorName: 'عميل آخر',
+      city: 'الرياض',
+      rating: 4,
+      comment: 'كانت التجربة جيدة والتنفيذ كان مرتباً وفي الوقت المطلوب.',
+      visitorKey: 'second-visitor-key-1234567890',
+    });
+
+    expect(result.autoApproved).toBe(false);
+    expect(dbMocks.createCustomerReview).toHaveBeenCalledWith(
+      expect.objectContaining({ status: 'pending', rating: 4 })
     );
   });
 
