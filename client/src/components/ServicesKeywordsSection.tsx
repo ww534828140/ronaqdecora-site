@@ -1,63 +1,92 @@
 /*
- * رونق للديكور — تذكير أسلوب الملف:
- * توجه الفخامة المينيمالية: قسم الكلمات المفتاحية الكبيرة والواضحة للعملاء ومحركات البحث.
- * الأحرف واضحة، كبيرة، ومنسقة بعناية لضمان قراءة ممتازة وتجربة بصرية راقية.
+ * رونق للديكور — عبارات خدمات عامة ومحلية بصياغة مرئية وواضحة.
  */
 
-import { CheckCircle2, Sparkles } from 'lucide-react';
+import { CheckCircle2, MapPin, Sparkles } from 'lucide-react';
 
-const keywordsList = [
-  'تركيب بديل رخام الرياض',
-  'محلات ورق جدران الرياض',
-  'مقاول ترميم شقق بالرياض',
+const generalKeywords = [
+  'معلم ديكورات',
+  'معلم دهان',
+  'معلم دهانات',
+  'معلم شيبورد',
+  'معلم ورق جدران',
+  'بديل الشيبورد',
+  'بديل الرخام',
   'تركيب شيبورد وتكسيات خشبية',
   'تصميم خلفيات شاشة TV ديكور',
-  'أعمال عوازل صوتية بالرياض',
-  'بناء غرف سندويش بنل',
-  'ديكورات بالرياض',
-  'شركة تشطيبات في الرياض',
-  'مقاول ديكور داخلي',
-  'دهانات خارجية وداخلية الرياض',
-  'فني جبس بورد بالرياض',
-  'معلم ديكورات الرياض'
+  'دهانات داخلية وخارجية',
+  'ديكورات داخلية وخارجية',
 ];
+
+const riyadhKeywords = [
+  'معلم ديكورات بالرياض',
+  'معلم دهان بالرياض',
+  'متجر دهانات بالرياض (للبحث عن خيارات الدهان)',
+  'معلم شيبورد بالرياض',
+  'معلم ورق جدران بالرياض',
+  'بديل الشيبورد بالرياض',
+  'بديل الرخام بالرياض',
+  'تركيب بديل رخام الرياض',
+  'محلات ورق جدران الرياض',
+  'شركة تشطيبات في الرياض',
+  'فني جبس بورد بالرياض',
+  'ديكورات بالرياض',
+];
+
+function KeywordGroup({
+  title,
+  items,
+  icon,
+}: {
+  title: string;
+  items: string[];
+  icon: 'general' | 'riyadh';
+}) {
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center gap-3 border-b border-border pb-4">
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
+          {icon === 'riyadh' ? <MapPin size={21} /> : <Sparkles size={21} />}
+        </div>
+        <h3 className="text-2xl font-extrabold text-foreground md:text-3xl">{title}</h3>
+      </div>
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {items.map(item => (
+          <div
+            key={item}
+            className="group flex items-center gap-3 rounded-2xl border border-border bg-white p-5 shadow-sm transition-all duration-300 hover:border-accent hover:shadow-md"
+          >
+            <CheckCircle2 className="shrink-0 text-accent" size={21} />
+            <span className="text-lg font-bold leading-snug text-foreground md:text-xl">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function ServicesKeywordsSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-secondary to-white border-y border-border">
+    <section className="border-y border-border bg-gradient-to-b from-secondary to-white py-24">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-4">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-accent">
             <Sparkles size={18} />
-            <span className="text-sm font-semibold">خدماتنا التخصصية في الرياض</span>
+            <span className="text-sm font-semibold">خدمات الديكور والدهانات</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-6 leading-tight">
-            أبرز خدمات الديكور والتشطيب في الرياض
+          <h2 className="mb-6 text-3xl font-extrabold leading-tight text-foreground md:text-4xl">
+            خدمات عامة وخدمات متخصصة في الرياض
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            نقدم نخبة من أعمال الديكورات، الدهانات، والترميم بأعلى معايير الحرفية والالتزام
+          <p className="text-lg leading-relaxed text-muted-foreground">
+            نقدم خدمات الديكور والدهانات وبدائل الرخام والشيبورد وورق الجدران، وينفذها فريق رونق داخل مدينة الرياض وأحيائها.
           </p>
         </div>
 
-        {/* Keywords grid with large, clear typography */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {keywordsList.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-4 p-6 rounded-2xl bg-white border border-border shadow-sm hover:shadow-md hover:border-accent transition-all duration-300 group"
-            >
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
-                <CheckCircle2 size={22} />
-              </div>
-              <span className="text-lg md:text-xl font-bold text-foreground leading-snug">
-                {item}
-              </span>
-            </div>
-          ))}
+        <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:gap-10">
+          <KeywordGroup title="خدمات الديكور والدهانات" items={generalKeywords} icon="general" />
+          <KeywordGroup title="خدماتنا في الرياض" items={riyadhKeywords} icon="riyadh" />
         </div>
       </div>
     </section>
   );
 }
-
-/* Style reminder: the typography is large, bold, and readable, perfectly matching the luxury minimalist ethos. */
