@@ -5,7 +5,15 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import ReviewsAdmin from "./pages/ReviewsAdmin";
+import ReviewsAdmin from "@/pages/ReviewsAdmin";
+import SectionPage from "@/pages/SectionPage";
+import ServicesSection from "@/components/ServicesSection";
+import ServicesKeywordsSection from "@/components/ServicesKeywordsSection";
+import RiyadhDistrictsSection from "@/components/RiyadhDistrictsSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import AboutSection from "@/components/AboutSection";
+import ReviewsSection from "@/components/ReviewsSection";
+import ContactSection from "@/components/ContactSection";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -13,6 +21,48 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/reviews-admin"} component={ReviewsAdmin} />
+      <Route path={"/services"}>
+        <SectionPage
+          title="خدمات الديكور والدهانات"
+          description="معلم ديكورات ومعلم دهانات لتنفيذ بديل الرخام، بديل الشيبورد، ورق الجدران والتشطيبات داخل الرياض."
+        >
+          <ServicesSection />
+          <ServicesKeywordsSection />
+          <RiyadhDistrictsSection />
+        </SectionPage>
+      </Route>
+      <Route path={"/projects"}>
+        <SectionPage
+          title="مشاريع رونق للديكور"
+          description="شاهد نماذج من أعمال الديكور والتشطيبات والدهانات التي ننفذها لعملائنا في الرياض."
+        >
+          <ProjectsSection />
+        </SectionPage>
+      </Route>
+      <Route path={"/about"}>
+        <SectionPage
+          title="من نحن"
+          description="رونق للديكور مؤسسة متخصصة في الديكورات الداخلية والخارجية والدهانات والتشطيبات في الرياض."
+        >
+          <AboutSection />
+        </SectionPage>
+      </Route>
+      <Route path={"/reviews"}>
+        <SectionPage
+          title="آراء عملاء رونق"
+          description="اطّلع على تقييمات العملاء وشارك تجربتك مع رونق للديكور في الرياض."
+        >
+          <ReviewsSection />
+        </SectionPage>
+      </Route>
+      <Route path={"/contact"}>
+        <SectionPage
+          title="تواصل مع رونق للديكور"
+          description="تواصل معنا لطلب خدمة ديكور أو دهانات أو تشطيب داخل الرياض عبر الاتصال أو واتساب."
+        >
+          <ContactSection />
+        </SectionPage>
+      </Route>
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

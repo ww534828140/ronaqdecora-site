@@ -5,11 +5,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'الرئيسية', href: '#home' },
-    { label: 'الخدمات', href: '#services' },
-    { label: 'المشاريع', href: '#projects' },
-    { label: 'من نحن', href: '#about' },
-    { label: 'التواصل', href: '#contact' },
+    { label: 'الرئيسية', href: '/' },
+    { label: 'الخدمات', href: '/services' },
+    { label: 'المشاريع', href: '/projects' },
+    { label: 'من نحن', href: '/about' },
+    { label: 'التواصل', href: '/contact' },
   ];
 
   return (
