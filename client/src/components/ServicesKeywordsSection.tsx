@@ -16,6 +16,16 @@ const generalKeywords = [
   'تصميم خلفيات شاشة TV ديكور',
   'دهانات داخلية وخارجية',
   'ديكورات داخلية وخارجية',
+  'معلم خشب',
+  'ديكورات خشبية',
+];
+
+const serviceLinks = [
+  { label: 'صفحة معلم الديكورات', href: '/decorations' },
+  { label: 'صفحة معلم الدهانات', href: '/painting' },
+  { label: 'صفحة الشيبورد والتكسيات الخشبية', href: '/shiboard' },
+  { label: 'صفحة معلم ورق الجدران', href: '/wallpaper' },
+  { label: 'صفحة بديل الرخام', href: '/marble-alternative' },
 ];
 
 const riyadhKeywords = [
@@ -31,6 +41,7 @@ const riyadhKeywords = [
   'شركة تشطيبات في الرياض',
   'فني جبس بورد بالرياض',
   'ديكورات بالرياض',
+  'معلم خشب بالرياض',
 ];
 
 function KeywordGroup({
@@ -85,6 +96,17 @@ export default function ServicesKeywordsSection() {
         <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:gap-10">
           <KeywordGroup title="خدمات الديكور والدهانات" items={generalKeywords} icon="general" />
           <KeywordGroup title="خدماتنا في الرياض" items={riyadhKeywords} icon="riyadh" />
+        </div>
+
+        <div className="mx-auto mt-14 max-w-6xl rounded-2xl border border-accent/20 bg-white p-6 shadow-sm md:p-8">
+          <h3 className="text-center text-2xl font-extrabold text-foreground md:text-3xl">تصفح صفحات خدماتنا</h3>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {serviceLinks.map(link => (
+              <a key={link.href} href={link.href} className="rounded-full border border-border px-4 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:text-accent">
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

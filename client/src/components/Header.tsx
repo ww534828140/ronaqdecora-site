@@ -6,9 +6,11 @@ const Header = () => {
 
   const navItems = [
     { label: 'الرئيسية', href: '/' },
-    { label: 'الخدمات', href: '/services' },
-    { label: 'المشاريع', href: '/projects' },
-    { label: 'من نحن', href: '/about' },
+    { label: 'الديكورات', href: '/decorations' },
+    { label: 'الدهانات', href: '/painting' },
+    { label: 'شيبورد وخشب', href: '/shiboard' },
+    { label: 'ورق جدران', href: '/wallpaper' },
+    { label: 'بديل الرخام', href: '/marble-alternative' },
     { label: 'التواصل', href: '/contact' },
   ];
 

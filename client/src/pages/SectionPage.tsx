@@ -13,6 +13,12 @@ export default function SectionPage({ title, description, children }: SectionPag
     document.title = `${title} | رونق للديكور بالرياض`;
     const meta = document.querySelector('meta[name="description"]');
     meta?.setAttribute('content', description);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const canonicalHref = `${window.location.origin}${window.location.pathname}`;
+    canonical?.setAttribute('href', canonicalHref);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${title} | رونق للديكور بالرياض`);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalHref);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [description, title]);
 
