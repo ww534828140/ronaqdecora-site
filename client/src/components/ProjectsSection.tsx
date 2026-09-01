@@ -9,22 +9,22 @@ const ProjectsSection = () => {
       image: '/manus-storage/1000262663_dff76e4e.jpg'
     },
     {
-      title: 'فيلا فاخرة',
-      category: 'ديكور داخلي',
-      description: 'تصميم وتشطيب فيلا حديثة بديكورات فاخرة وتشطيبات عالية الجودة',
-      image: '/manus-storage/projects-showcase_f3110c0a.png'
+      title: 'بديل رخام مع رسم بليزر بالرياض',
+      category: 'بديل رخام وديكور جداري',
+      description: 'تنفيذ جدار ديكوري من بديل الرخام مع رسم بليزر وتكسيات خشبية وإضاءة مخفية لمظهر فاخر في الرياض.',
+      image: '/manus-storage/1000262665_cf1454d1.jpg'
     },
     {
-      title: 'مكتب تنفيذي',
-      category: 'ديكور مكتبي',
-      description: 'مكتب احترافي بتصميم عصري يعكس الاحترافية والجودة',
-      image: '/manus-storage/projects-showcase_f3110c0a.png'
+      title: 'خلفية مرايات مع بديل الشيبورد بالرياض',
+      category: 'مرايات وبديل شيبورد',
+      description: 'تصميم خلفية جدارية تجمع بين بديل الشيبورد والمرايات والإضاءة الجانبية بتنفيذ أنيق داخل الرياض.',
+      image: '/manus-storage/1000262677_483bf186.jpg'
     },
     {
-      title: 'شقة سكنية',
-      category: 'ترميم وتشطيب',
-      description: 'ترميم شامل مع تشطيبات احترافية وديكورات عصرية',
-      image: '/manus-storage/projects-showcase_f3110c0a.png'
+      title: 'خلفية مرآة مع تكسيات خشبية بالرياض',
+      category: 'تكسيات خشبية ومرايات',
+      description: 'تنفيذ تكسيات خشبية رأسية مع مرآة دائرية وإضاءة مخفية لإضافة لمسة فخمة وعصرية للمكان في الرياض.',
+      image: '/manus-storage/1000262647_60aa16e5.jpg'
     },
   ];
 
@@ -53,7 +53,7 @@ const ProjectsSection = () => {
               <div className="relative overflow-hidden h-80 bg-muted">
                 <img
                   src={project.image}
-                  alt={`${project.title} في الرياض - رونق للديكور`}
+                  alt={`${project.title} | أعمال رونق للديكور في الرياض`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
