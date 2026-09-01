@@ -9,8 +9,9 @@ const Header = () => {
     { label: 'الديكورات', href: '/decorations' },
     { label: 'الدهانات', href: '/painting' },
     { label: 'شيبورد وخشب', href: '/shiboard' },
+    { label: 'تكسيات خشبية', href: '/wood' },
     { label: 'ورق جدران', href: '/wallpaper' },
-    { label: 'بديل الرخام', href: '/marble-alternative' },
+    { label: 'بديل الرخام', href: '/marble' },
     { label: 'التواصل', href: '/contact' },
   ];
 

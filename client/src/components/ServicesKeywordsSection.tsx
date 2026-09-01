@@ -24,8 +24,9 @@ const serviceLinks = [
   { label: 'صفحة معلم الديكورات', href: '/decorations' },
   { label: 'صفحة معلم الدهانات', href: '/painting' },
   { label: 'صفحة الشيبورد والتكسيات الخشبية', href: '/shiboard' },
+  { label: 'صفحة التكسيات الخشبية', href: '/wood' },
   { label: 'صفحة معلم ورق الجدران', href: '/wallpaper' },
-  { label: 'صفحة بديل الرخام', href: '/marble-alternative' },
+  { label: 'صفحة بديل الرخام', href: '/marble' },
 ];
 
 const riyadhKeywords = [
