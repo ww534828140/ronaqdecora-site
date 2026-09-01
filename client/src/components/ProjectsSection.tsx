@@ -3,6 +3,12 @@ import { ExternalLink } from 'lucide-react';
 const ProjectsSection = () => {
   const projects = [
     {
+      title: 'خلفية شاشة بتكسيات مع رفوف',
+      category: 'تكسيات وديكور شاشة',
+      description: 'تنفيذ خلفية شاشة بتكسيات جدارية وإضاءة مخفية ورفوف ووحدة تلفزيون معلقة داخل الرياض.',
+      image: '/manus-storage/1000262663_dff76e4e.jpg'
+    },
+    {
       title: 'فيلا فاخرة',
       category: 'ديكور داخلي',
       description: 'تصميم وتشطيب فيلا حديثة بديكورات فاخرة وتشطيبات عالية الجودة',
@@ -47,7 +53,7 @@ const ProjectsSection = () => {
               <div className="relative overflow-hidden h-80 bg-muted">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} في الرياض - رونق للديكور`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
