@@ -23,12 +23,12 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <img 
               src="/manus-storage/ronaq-logo_759e255b.png" 
-              alt="رونق للديكور" 
+              alt="رونق للديكور – معلم ديكورات الرياض" 
               className="h-12 w-12"
             />
             <div>
-              <h1 className="text-xl font-bold text-foreground">رونق</h1>
-              <p className="text-xs text-muted-foreground">للديكور</p>
+              <h1 className="text-xl font-bold text-foreground">رونق للديكور</h1>
+              <p className="text-[10px] font-semibold text-accent">معلم ديكورات الرياض</p>
             </div>
           </div>
 
