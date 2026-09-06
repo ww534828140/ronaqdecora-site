@@ -8,6 +8,7 @@ import RiyadhDistrictsSection from '@/components/RiyadhDistrictsSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import MobileCallRedirect from '@/components/MobileCallRedirect';
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <MobileCallRedirect />
     </div>
   );
 }
