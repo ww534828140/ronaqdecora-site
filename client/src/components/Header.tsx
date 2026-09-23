@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
+const sitePath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`;
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -37,7 +39,7 @@ const Header = () => {
             {navItems.map((item) => (
               <a
                 key={item.label}
-                href={item.href}
+                href={sitePath(item.href)}
                 className="text-sm font-medium text-foreground hover:text-accent transition-colors duration-200 relative group"
               >
                 {item.label}
@@ -82,7 +84,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={sitePath(item.href)}
                   className="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
