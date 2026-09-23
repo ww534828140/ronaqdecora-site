@@ -4,6 +4,8 @@
 
 import { CheckCircle2, MapPin, Sparkles } from 'lucide-react';
 
+const sitePath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}${path}`;
+
 const generalKeywords = [
   'معلم ديكورات',
   'معلم دهان',
@@ -103,7 +105,7 @@ export default function ServicesKeywordsSection() {
           <h3 className="text-center text-2xl font-extrabold text-foreground md:text-3xl">تصفح صفحات خدماتنا</h3>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {serviceLinks.map(link => (
-              <a key={link.href} href={link.href} className="rounded-full border border-border px-4 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:text-accent">
+              <a key={link.href} href={sitePath(link.href)} className="rounded-full border border-border px-4 py-3 text-sm font-bold text-foreground transition-colors hover:border-accent hover:text-accent">
                 {link.label}
               </a>
             ))}
