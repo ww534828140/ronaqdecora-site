@@ -15,7 +15,6 @@ import AboutSection from "@/components/AboutSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import ContactSection from "@/components/ContactSection";
 import ServiceDetailPage from "@/pages/ServiceDetailPage";
-import LegacyRedirect from "@/components/LegacyRedirect";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -58,7 +57,12 @@ function Router() {
         />
       </Route>
       <Route path={"/wood-decor"}>
-        <LegacyRedirect to="/wood" />
+        <ServiceDetailPage
+          title="معلم خشب وديكورات خشبية بالرياض"
+          description="معلم خشب بالرياض لتنفيذ التكسيات الخشبية وبديل الخشب وديكورات الجدران وخلفيات الشاشات."
+          intro="ننفذ الديكورات الخشبية والتكسيات وبديل الخشب للمجالس وغرف النوم وخلفيات التلفزيون داخل الرياض."
+          services={["معلم خشب", "معلم خشب بالرياض", "تكسيات خشبية", "بديل الخشب", "ديكورات خشبية"]}
+        />
       </Route>
       <Route path={"/wood"}>
         <ServiceDetailPage
@@ -77,7 +81,12 @@ function Router() {
         />
       </Route>
       <Route path={"/marble-alternative"}>
-        <LegacyRedirect to="/marble" />
+        <ServiceDetailPage
+          title="تركيب بديل الرخام بالرياض"
+          description="تركيب بديل الرخام بالرياض للجدران وخلفيات الشاشات والمجالس بتشطيب أنيق وعملي."
+          intro="نوفر حلول بديل الرخام وبديل الخشب للمساحات الداخلية، مع تنفيذ دقيق داخل مدينة الرياض."
+          services={["بديل الرخام", "بديل الرخام بالرياض", "تركيب بديل رخام الرياض"]}
+        />
       </Route>
       <Route path={"/marble"}>
         <ServiceDetailPage

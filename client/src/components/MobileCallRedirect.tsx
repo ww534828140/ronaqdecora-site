@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const WHATSAPP_NUMBER = '966539740564';
-const DISPLAY_WHATSAPP_NUMBER = '0539740564';
-const REDIRECT_KEY = 'ronaq-mobile-whatsapp-attempted';
+const PHONE_NUMBER = '0540450417';
+const REDIRECT_KEY = 'ronaq-mobile-call-attempted';
 
 function isMobileDevice() {
   if (typeof navigator === 'undefined') return false;
@@ -29,7 +28,7 @@ export default function MobileCallRedirect() {
       setShowFallback(true);
     }, 900);
 
-    window.location.href = `https://wa.me/${WHATSAPP_NUMBER}`;
+    window.location.href = `tel:${PHONE_NUMBER}`;
 
     return () => window.clearTimeout(fallbackTimer);
   }, []);
@@ -42,24 +41,30 @@ export default function MobileCallRedirect() {
         dir="rtl"
         role="dialog"
         aria-modal="true"
-        aria-labelledby="mobile-whatsapp-title"
+        aria-labelledby="mobile-call-title"
         className="w-full max-w-sm rounded-2xl bg-white p-6 text-center shadow-2xl"
       >
         <p className="mb-2 text-sm font-semibold text-[#b08d28]">رونق للديكور</p>
-        <h2 id="mobile-whatsapp-title" className="mb-3 text-2xl font-bold text-slate-900">
+        <h2 id="mobile-call-title" className="mb-3 text-2xl font-bold text-slate-900">
           تواصل معنا الآن
         </h2>
         <p className="mb-6 leading-7 text-slate-600">
-          إذا لم يفتح واتساب تلقائياً، اضغط الزر أدناه للتواصل معنا عبر واتساب.
+          إذا لم يفتح تطبيق الاتصال تلقائياً، اضغط الزر أدناه للاتصال مباشرة.
         </p>
         <div className="flex flex-col gap-3">
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`tel:${PHONE_NUMBER}`}
             className="rounded-xl bg-[#b08d28] px-5 py-3 font-bold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            التواصل عبر واتساب: {DISPLAY_WHATSAPP_NUMBER}
+            اتصال: {PHONE_NUMBER}
+          </a>
+          <a
+            href="https://wa.me/966539740564"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-slate-200 px-5 py-3 font-bold text-slate-800 transition-colors hover:bg-slate-50"
+          >
+            التواصل عبر واتساب
           </a>
           <button
             type="button"

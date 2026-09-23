@@ -36,11 +36,6 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   registerStorageProxy(app);
   registerOAuthRoutes(app);
-
-  // Permanently consolidate legacy service URLs so crawlers receive an HTTP redirect
-  // instead of indexing duplicate SPA pages with competing canonicals.
-  app.get("/wood-decor", (_req, res) => res.redirect(301, "/wood"));
-  app.get("/marble-alternative", (_req, res) => res.redirect(301, "/marble"));
   // tRPC API
   app.use(
     "/api/trpc",
