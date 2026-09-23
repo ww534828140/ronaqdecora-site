@@ -43,6 +43,7 @@ jobs:
             mkdir -p "dist/public/$route"
             cp dist/public/index.html "dist/public/$route/index.html"
           done
+          printf 'ronaqdecora.lol\n' > dist/public/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
