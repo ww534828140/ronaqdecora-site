@@ -39,9 +39,10 @@ jobs:
       - name: Preserve SPA routes on GitHub Pages
         run: |
           cp dist/public/index.html dist/public/404.html
-          for route in services decorations painting shiboard wood wallpaper marble contact; do
+          for route in services decorations painting shiboard wood wallpaper marble projects about reviews contact; do
             mkdir -p "dist/public/$route"
             cp dist/public/index.html "dist/public/$route/index.html"
+            cp -R dist/public/assets "dist/public/$route/assets"
           done
           printf 'ronaqdecora.lol\n' > dist/public/CNAME
 
