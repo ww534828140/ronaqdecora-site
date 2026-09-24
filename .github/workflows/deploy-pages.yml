@@ -43,6 +43,7 @@ jobs:
             mkdir -p "dist/public/$route"
             cp dist/public/index.html "dist/public/$route/index.html"
             cp -R dist/public/assets "dist/public/$route/assets"
+            cp dist/public/ronaq-logo.png "dist/public/$route/ronaq-logo.png"
           done
           printf 'ronaqdecora.lol\n' > dist/public/CNAME
 
