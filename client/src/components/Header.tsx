@@ -24,7 +24,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
-              src="/manus-storage/ronaq-logo_759e255b.png" 
+              src="./ronaq-logo.png" 
               alt="رونق للديكور – معلم ديكورات الرياض" 
               className="h-12 w-12"
             />
