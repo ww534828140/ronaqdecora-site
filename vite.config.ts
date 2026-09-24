@@ -154,9 +154,9 @@ const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(
 
 export default defineConfig({
   plugins,
-  // The custom domain is the canonical deployment target; keep assets rooted
-  // at / so CSS, JavaScript, images, and canonical URLs work after DNS cutover.
-  base: "/",
+  // Relative assets work both under the temporary repository URL and the
+  // eventual custom domain.
+  base: "./",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
