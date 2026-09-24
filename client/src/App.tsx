@@ -18,8 +18,13 @@ import ServiceDetailPage from "@/pages/ServiceDetailPage";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
+  const routerBase =
+    typeof window !== "undefined" && window.location.hostname.endsWith("github.io")
+      ? "/ronaqdecora-site"
+      : "";
+
   return (
-    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+    <WouterRouter base={routerBase}>
       <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/reviews-admin"} component={ReviewsAdmin} />
