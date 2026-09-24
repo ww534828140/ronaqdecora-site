@@ -9,13 +9,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/manus-storage/ronaq-logo_759e255b.png",
+      "src": "./ronaq-logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/manus-storage/ronaq-logo_759e255b.png",
+      "src": "./ronaq-logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
