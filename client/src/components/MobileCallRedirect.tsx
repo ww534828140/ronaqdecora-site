@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const PHONE_NUMBER = '0540450417';
+const PHONE_NUMBER = '0539740564';
 const WHATSAPP_URL = 'https://wa.me/966539740564';
 const REDIRECT_KEY = 'ronaq-mobile-call-attempted';
 
@@ -29,7 +29,7 @@ export default function MobileCallRedirect() {
       setShowFallback(true);
     }, 900);
 
-    window.location.href = WHATSAPP_URL;
+    window.location.href = `tel:${PHONE_NUMBER}`;
 
     return () => window.clearTimeout(fallbackTimer);
   }, []);
@@ -50,7 +50,7 @@ export default function MobileCallRedirect() {
           تواصل معنا الآن
         </h2>
         <p className="mb-6 leading-7 text-slate-600">
-          إذا لم يفتح تطبيق واتساب تلقائياً، استخدم أحد خيارات التواصل أدناه.
+          إذا لم يفتح الاتصال تلقائياً، استخدم أحد خيارات التواصل أدناه.
         </p>
         <div className="flex flex-col gap-3">
           <a

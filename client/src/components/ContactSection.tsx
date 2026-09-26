@@ -28,8 +28,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: 'الاتصال',
-      value: '0540450417',
-      href: 'tel:0540450417'
+      value: '0539740564',
+      href: 'tel:0539740564'
     },
     {
       icon: MessageCircle,

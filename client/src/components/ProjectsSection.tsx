@@ -122,7 +122,7 @@ const ProjectsSection = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:0540450417"
+              href="tel:0539740564"
               className="px-8 py-3 bg-foreground text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
             >
               اتصل بنا

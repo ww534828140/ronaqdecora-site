@@ -51,7 +51,7 @@ const Header = () => {
           {/* Contact Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="tel:0540450417"
+              href="tel:0539740564"
               className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary text-foreground hover:bg-muted transition-colors duration-200 font-medium text-sm"
             >
               <Phone size={18} />
@@ -93,7 +93,7 @@ const Header = () => {
               ))}
               <div className="flex gap-2 pt-2">
                 <a
-                  href="tel:0540450417"
+                  href="tel:0539740564"
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-secondary text-foreground hover:bg-muted transition-colors"
                 >
                   <Phone size={18} />

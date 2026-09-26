@@ -71,11 +71,11 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">تواصل معنا</h4>
             <div className="space-y-3">
               <a 
-                href="tel:0540450417"
+                href="tel:0539740564"
                 className="flex items-center gap-2 text-white/70 hover:text-accent transition-colors"
               >
                 <Phone size={18} />
-                <span className="text-sm">0540450417</span>
+                <span className="text-sm">0539740564</span>
               </a>
               <a 
                 href="https://wa.me/966539740564"
